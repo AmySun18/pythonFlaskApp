@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+    {% if infos|length > 0 %}
+        <TABLE  BORDER="3" CELLPADDING="5" CELLSPACING="5">
+          <TR>
+            <TH COLSPAN="5">
+                <H3><BR>Download history of sample.csv</H3>
+            </TH>
+          </TR>
+            <TH>Number</TH>
+            <TH>Delay</TH>
+            <TH>Client_IP</TH>
+            <TH>User_Agent</TH>
+            <TH>Timestamp</TH>
+
+            {% for info in infos %}
+            <TR>
+                <TD>{{info.number}}</TD>
+                <TD>{{info.delay}} </TD>
+                <TD>{{info.client_ip}} </TD>
+                <TD>{{info.user_agent}}</TD>
+                <TD>{{info.timestamp}}</TD>
+            </TR>
+            {% endfor %}
+        </TABLE>
+
+    {% else %}
+        <h5>The file is not downloaded yet!</h5>
+    {% endif %}
+</div>
+{% endblock %}

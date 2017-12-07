@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+    <form id="download-form" action="/csv_test"  method="post">
+      <div class="form-group">
+        <label for="delay">Delay time (seconds)</label>
+        <input type="number" class="form-control" id="delay" aria-describedby="delayHelp" placeholder="Enter delay" name="delay">
+        <small id="delayHelp" class="form-text text-muted">Please enter an integer.</small>
+      </div>
+
+      <button type="submit" class="btn btn-success">Download</button>
+    </form>
+</div>
+{% endblock %}
+
+
